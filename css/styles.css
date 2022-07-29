@@ -171,15 +171,15 @@ p {
 .header-link-current {
   color: var(--accent-txt-cl);
 }
-
-.header-link-current::after {
+/* Подчеркивание будет в 5-ом уроке */
+/* .header-link-current::after {
   content: "";
   display: block;
   width: 100%;
   height: 4px;
   border-radius: 4px;
   background-color: #2196f3;
-}
+} */
 
 .contacts-icon {
   fill: currentColor;
@@ -199,7 +199,7 @@ p {
 /* Hero section */
 
 .hero {
-  max-width: 1200px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 200px;
@@ -233,7 +233,6 @@ p {
 }
 
 .thumbnail {
-  width: 270px;
   height: 120px;
   display: flex;
   align-items: center;
@@ -291,6 +290,7 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
 .team-discription {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -336,26 +336,23 @@ p {
   justify-content: center;
   width: 170px;
   height: 92px;
-  gap: 30px;
+
   border: 1px solid #afb1b8;
   border-radius: 4px;
-}
-.thumbnail-clients:hover,
-.thumbnail-clients:focus {
-  border-color: var(--accent-txt-cl);
-  color: var(--accent-txt-cl);
 }
 
 .icon-clients {
   fill: #afb1b8;
 }
 
-.icon-clients:hover,
-.icon-clients:focus,
-.icon-clients:active {
+.thumbnail-clients:hover {
+  border-color: var(--accent-txt-cl);
+}
+
+.thumbnail-clients:hover .icon-clients {
   fill: var(--accent-txt-cl);
 }
-.icon-clients:hover .icon-clients {
+.thumbnail-clients:focus .icon-clients {
   fill: var(--accent-txt-cl);
 }
 
@@ -440,13 +437,37 @@ p {
   letter-spacing: 0.03em;
   color: var(--main-txt-cl);
 }
-.project-portfolio-item {
+.portfolio-button {
+  border: none;
+  padding-top: 6px;
+  padding-right: 22px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  border-radius: 4px;
+}
+.project-portfolio-link {
+  display: block;
+}
+
+.project-portfolio-link:hover,
+.project-portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .portfolio-button:hover,
-.portfolio-button:focus {
-  color: var(--accent-txt-cl);
+.portfolio-button:focus,
+.portfolio-button:active {
+  color: var(--btn-txt-cl);
+  background-color: var(--accent-txt-cl);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-btn:hover,
+.portfolio-btn:focus,
+.portfolio-btn:active {
+  color: var(--wight-txt-cl);
 }
 
 .active-current {
@@ -473,10 +494,10 @@ p {
   flex-wrap: wrap;
 }
 .portfolio-discription {
-  padding-top: 20px;
-  padding-right: 24px;
-  padding-bottom: 20px;
-  padding-left: 24px;
+  padding: 20px 24px;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 }
 
 .title-project {
@@ -516,12 +537,15 @@ p {
   fill: #afb1b8;
 }
 
-.socials-link:hover {
+.socials-link:hover,
+.socials-link:focus {
   background-color: var(--accent-txt-cl);
 }
 .socials-link:hover .socials-icon {
   fill: var(--btn-txt-cl);
-  background-color: var(--accent-txt-cl);
+}
+.socials-link:focus .socials-icon {
+  fill: var(--btn-txt-cl);
 }
 
 /* Footer icon */
@@ -542,7 +566,8 @@ p {
   fill: #ffffff;
 }
 
-.socials-link-footer:hover {
+.socials-link-footer:hover,
+.socials-link-footer:focus {
   background-color: var(--accent-txt-cl);
 }
 .socials-link-footer:hover .socials-icon-footer {
